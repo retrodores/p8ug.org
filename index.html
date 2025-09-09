@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home of P8UG – Prog8 Users Group</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Meta description -->
+  <meta name="description" content="Prog8 Users Group (P8UG) – Prog8 is a compiled programming language for the 6502 family. Find us at VCFMW 2025 Retrodores booth #123.">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="P8UG – Prog8 Users Group">
+  <meta property="og:description" content="Prog8 is a compiled language for the 6502 family. Visit us at VCFMW 2025 Retrodores booth #123.">
+  <meta property="og:image" content="https://p8ug.org/p8ug_banner.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://p8ug.org/">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="P8UG – Prog8 Users Group">
+  <meta name="twitter:description" content="Prog8 is a compiled language for the 6502 family. Visit us at VCFMW 2025 Retrodores booth #123.">
+  <meta name="twitter:image" content="https://p8ug.org/p8ug_banner.png">
+
+</head>
+<body bgcolor="#f4e3c0"> <!-- complementary light beige background -->
+  <h1>Home of P8UG.org – Prog8 Users Group</h1>
+  <table border="0" width="800" cellspacing="10">
+    <tr>
+      <!-- Left column: collapsible menu -->
+      <td valign="top" width="200">
+        <b>Menu</b><br><br>
+        <a href="/">Home</a><br><br>
+        <a href="javascript:void(0)" onclick="toggleMenu('about')">[+/-] About</a>
+        <div id="about" style="display:block; margin-left:10px;">
+          <a href="https://github.com/irmen/prog8/blob/master/README.md">Overview</a><br>
+          <a href="history/">P8UG History</a><br>
+        </div>
+        <br>
+
+        <a href="javascript:void(0)" onclick="toggleMenu('downloads')">[+/-] Downloads</a>
+        <div id="downloads" style="display:block; margin-left:10px;">
+          <a href="https://github.com/irmen/prog8/releases">Releases</a><br>
+          <a href="https://prog8.readthedocs.io/en/latest/software.html">Show & Tell</a><br>
+        </div>
+        <br>
+
+        <a href="javascript:void(0)" onclick="toggleMenu('docs')">[+/-] Docs</a>
+        <div id="docs" style="display:block; margin-left:10px;">
+          <a href="https://github.com/irmen/prog8/tree/master/examples">Examples</a><br>
+          <a href="https://prog8.readthedocs.io/">Documentation</a><br>
+        </div>
+        <br>
+        Our Mascot's name is <i>8 Ball</i>, he is a Pug!
+      </td>
+
+      <!-- Main body -->
+      <td valign="top">
+        <p><b>Prog8</b> is a modern compiled programming language for the classic 6502 CPU family, 
+        designed to make retrocomputing projects faster and more productive. It provides structured 
+        syntax, optimized code generation, and convenient tooling for developing on machines like 
+        the Commodore 64, VIC-20, Commander X16, and other 6502-based systems. It is maintained by <b>Irmen de Jong</b>, <a href="https://paypal.me/irmendejong">send him a thank you donation</a>! </br></p>
+
+        <p>The <b>P8UG</b> (Prog8 Users Group) is a loosely affiliated community of retro computing 
+        enthusiasts who enjoy exploring Prog8. We connect primarily through Discord and occasionally 
+        over video conferences to share tips, projects, and discuss the language's features and future.</p>
+
+        <p>You can also meet us in person! Come see us at <b>VCFMW 2025</b>, Retrodores booth 
+        <b>#Z22/23</b>.</p>
+
+        <p><a href="https://cx16forum.com/forum/viewtopic.php?t=405">prog8 Forum</a><br>
+        <a href="https://discord.gg/nS2PqEC">Join the #prog8-dev channel on Discord</a></p>
+      </td>
+      <!-- Right column: image -->
+      <td valign="top" width="200" align="center">
+        <img src="p8ug_banner.png" alt="Prog8 Users Group Banner" style="max-height:400px;"><br><br>
+      </td>
+    </tr>
+  </table>
+
+<script>
+  function toggleMenu(id) {
+    var el = document.getElementById(id);
+    if (el.style.display === "none") {
+      el.style.display = "block";
+    } else {
+      el.style.display = "none";
+    }
+  }
+</script>
+
+</body>
+</html>
