@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>|| Releases - P8UG – Prog8 Users Group ||</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Meta description -->
+  <meta name="description" content="Choose a Prog8 release: the final version 12 release and the version 14 betas, with downloads and release notes.">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="Prog8 Releases – Prog8 Users Group">
+  <meta property="og:description" content="Find Prog8 compiler downloads, stable and beta release summaries, and links to the official release notes.">
+  <meta property="og:image" content="https://p8ug.org/p8ug_banner.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://p8ug.org/releases.html">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Prog8 Releases – Prog8 Users Group">
+  <meta name="twitter:description" content="Find Prog8 compiler downloads, stable and beta release summaries, and links to the official release notes.">
+  <meta name="twitter:image" content="https://p8ug.org/p8ug_banner.png">
+
+</head>
+<body bgcolor="#f4e3c0"> <!-- complementary light beige background -->
+  <h1>Prog8 Releases – Prog8 Users Group</h1>
+  <table border="0" cellspacing="10">
+    <tr>
+      <!-- Left column: collapsible menu -->
+      <td valign="top" width="300">
+        <b>Menu</b><br><br>
+        <a href="/">Home</a><br><br>
+        <a href="javascript:void(0)" onclick="toggleMenu('about'); return false;" aria-expanded="true" aria-controls="about"><span aria-hidden="true">&#9650;</span> About</a>
+        <div id="about" style="display:block; margin-left:10px;">
+          <ul style="margin:0; padding-left:20px;">
+            <li><a href="/overview.html">Overview</a></li>
+            <li><a href="/history/">P8UG History</a></li>
+          </ul>
+        </div>
+        <br>
+
+        <a href="javascript:void(0)" onclick="toggleMenu('downloads'); return false;" aria-expanded="true" aria-controls="downloads"><span aria-hidden="true">&#9650;</span> Downloads</a>
+        <div id="downloads" style="display:block; margin-left:10px;">
+          <ul style="margin:0; padding-left:20px;">
+            <li><a href="/releases.html">Releases</a></li>
+            <li><a href="https://prog8.readthedocs.io/en/latest/software.html">Show & Tell</a></li>
+          </ul>
+        </div>
+        <br>
+
+        <a href="javascript:void(0)" onclick="toggleMenu('docs'); return false;" aria-expanded="true" aria-controls="docs"><span aria-hidden="true">&#9650;</span> Docs</a>
+        <div id="docs" style="display:block; margin-left:10px;">
+          <ul style="margin:0; padding-left:20px;">
+            <li><a href="https://github.com/irmen/prog8/tree/master/examples">Examples</a></li>
+            <li><a href="https://prog8.readthedocs.io/">Documentation</a></li>
+            <li><a href="https://www.lulu.com/shop/irmen-de-jong-and-andrew-gillham/prog8-handbook/paperback/product-q6ggp82.html" target=lulu>Order Printed Manual</a></li>
+          </ul>
+        </div>
+        <br>
+        Our Mascot's name is <i>8 Ball</i>, he is a Pug!
+      </td>
+
+      <!-- Main body -->
+      <td valign="top" width="600">
+        <h2>Which version should I try?</h2>
+        <p>There are two branches to know about right now: version 12 for the
+        established 6502 projects, and version 14 if you want to try what is coming
+        next. Here is a quick breakdown to help you pick a starting point.</p>
+        <p><i>Last checked: 1 November 2026.</i> Downloads and full release notes
+        are hosted by Irmen on GitHub.</p>
+
+        <h2>Version 12.3.5 - latest stable, final v12 release</h2>
+        <p>Released 29 October 2026. This is the last release in the version 12
+        series, with bug fixes and a small improvement to block aliases. If you
+        are getting started on a C64, C128, or Commander X16, this is the stable
+        release to start with.</p>
+        <ul>
+          <li>Block aliases let you call subroutines and access constants,
+          arrays, and struct members through an alias.</li>
+          <li>Fixes include incorrect min/max results, typed-pointer problems on
+          6502 targets, and compiler crashes involving boolean expressions.</li>
+          <li>Also fixes virtual-register results and several virtual-target bugs.</li>
+        </ul>
+        <p><a href="https://github.com/irmen/prog8/releases/download/v12.3.5/prog8c-12.3.5-all.jar">Download the 12.3.5 compiler</a>
+        - <a href="https://github.com/irmen/prog8/releases/tag/v12.3.5">Full release notes</a></p>
+
+        <h2>Version 14.0 betas - try the new stuff</h2>
+        <p>Version 14 is still in beta. It adds experimental Motorola 68000/68020
+        support, including Amiga targets, along with language, library, and compiler
+        changes. The new IR-based 6502 code generator is experimental too.
+        Keep a copy of your working project and read the breaking changes before
+        moving it over.</p>
+        <p><b>Where is version 13?</b> Irmen skipped it because he considers 13
+        unlucky. We go straight from 12 to 14!</p>
+
+        <h3>14.0-BETA3 - latest beta</h3>
+        <p>Released 27 October 2026. This is the beta to try first. It improves
+        m68k register allocation and code generation, adds optimizations to the
+        new 6502 backend, and expands jump-table and linked-list support.
+        There are also new Amiga graphics helpers and fixes for pointers,
+        boolean expressions, and block aliases.</p>
+        <p><a href="https://github.com/irmen/prog8/releases/download/v14.0-BETA3/prog8c-14.0-BETA3-all.jar">Download BETA3</a>
+        - <a href="https://github.com/irmen/prog8/releases/tag/v14.0-BETA3">Full release notes</a></p>
+
+        <h3>14.0-BETA2 - earlier beta</h3>
+        <p>Released 10 October 2026. Introduced stack-based locals and parameters
+        for ordinary m68k subroutines, allowing recursion and re-entrant calls.
+        It also added union types, an exact output filename option, VERA64
+        libraries for the C64, and more Amiga libraries and examples.</p>
+        <p><a href="https://github.com/irmen/prog8/releases/download/v14.0-BETA2/prog8c-14.0-BETA2-all.jar">Download BETA2</a>
+        - <a href="https://github.com/irmen/prog8/releases/tag/v14.0-BETA2">Full release notes</a></p>
+
+        <h3>14.0-BETA1 - first beta</h3>
+        <p>Released 14 September 2026. The first look at version 14 brought the
+        experimental Amiga and Qemu m68k targets, a portable pointer type, and a
+        32-bit virtual target. Existing projects may need changes: the list
+        module became lists, and the experimental 6502 compiler option became
+        -newcodegen.</p>
+        <p><a href="https://github.com/irmen/prog8/releases/download/v14.0-BETA1/prog8c-14.0-BETA1-all.jar">Download BETA1</a>
+        - <a href="https://github.com/irmen/prog8/releases/tag/v14.0-BETA1">Full release notes</a></p>
+
+        <h2>Ready to get going?</h2>
+        <p>The compiler runs on your modern computer. For 6502 targets you will
+        need Java and the 64tass assembler, plus an emulator or real machine to
+        run your program. The experimental m68k targets have their own tool
+        requirements. Follow the
+        <a href="https://prog8.readthedocs.io/">documentation</a> for your chosen
+        version and machine.</p>
+        <p>For older versions or releases published after this page was updated,
+        visit <a href="https://github.com/irmen/prog8/releases">all official releases</a>.
+        If you try a beta, come share how it went with the crew on
+        <a href="https://discord.gg/nS2PqEC">Discord</a>!</p>
+      </td>
+      <!-- Right column: image -->
+      <td valign="top" width="300" align="center">
+        <img src="p8ug_banner.png" alt="Prog8 Users Group Banner" style="max-height:400px;"><br><br>
+        As seen in<br/><a href=https://www.computesgazette.com/ target=_other>COMPUTE!'S GAZETTE</a>!
+      </td>
+    </tr>
+  </table>
+  <div align=left>Brought to you by <a href=https://retrodores.com>Retrodores.com</a></div>
+<script>
+  function toggleMenu(id) {
+    var el = document.getElementById(id);
+    var expanded = el.style.display === "none";
+    el.style.display = expanded ? "block" : "none";
+    var toggle = document.querySelector('[aria-controls="' + id + '"]');
+    toggle.setAttribute("aria-expanded", String(expanded));
+    toggle.querySelector("span").textContent = expanded ? "▲" : "▼";
+  }
+</script>
+
+</body>
+</html>

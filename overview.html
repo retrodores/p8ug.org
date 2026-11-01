@@ -30,25 +30,31 @@
       <td valign="top" width="300">
         <b>Menu</b><br><br>
         <a href="/">Home</a><br><br>
-        <a href="javascript:void(0)" onclick="toggleMenu('about')">[+/-] About</a>
+        <a href="javascript:void(0)" onclick="toggleMenu('about'); return false;" aria-expanded="true" aria-controls="about"><span aria-hidden="true">&#9650;</span> About</a>
         <div id="about" style="display:block; margin-left:10px;">
-          <a href="/overview.html">Overview</a><br>
-          <a href="/history/">P8UG History</a><br>
+          <ul style="margin:0; padding-left:20px;">
+            <li><a href="/overview.html">Overview</a></li>
+            <li><a href="/history/">P8UG History</a></li>
+          </ul>
         </div>
         <br>
 
-        <a href="javascript:void(0)" onclick="toggleMenu('downloads')">[+/-] Downloads</a>
+        <a href="javascript:void(0)" onclick="toggleMenu('downloads'); return false;" aria-expanded="true" aria-controls="downloads"><span aria-hidden="true">&#9650;</span> Downloads</a>
         <div id="downloads" style="display:block; margin-left:10px;">
-          <a href="https://github.com/irmen/prog8/releases">Releases</a><br>
-          <a href="https://prog8.readthedocs.io/en/latest/software.html">Show & Tell</a><br>
+          <ul style="margin:0; padding-left:20px;">
+            <li><a href="/releases.html">Releases</a></li>
+            <li><a href="https://prog8.readthedocs.io/en/latest/software.html">Show & Tell</a></li>
+          </ul>
         </div>
         <br>
 
-        <a href="javascript:void(0)" onclick="toggleMenu('docs')">[+/-] Docs</a>
+        <a href="javascript:void(0)" onclick="toggleMenu('docs'); return false;" aria-expanded="true" aria-controls="docs"><span aria-hidden="true">&#9650;</span> Docs</a>
         <div id="docs" style="display:block; margin-left:10px;">
-          <a href="https://github.com/irmen/prog8/tree/master/examples">Examples</a><br>
-          <a href="https://prog8.readthedocs.io/">Documentation</a><br>
-          <a href="https://www.lulu.com/shop/irmen-de-jong-and-andrew-gillham/prog8-handbook/paperback/product-q6ggp82.html" target=lulu>Order Printed Manual</a><br>
+          <ul style="margin:0; padding-left:20px;">
+            <li><a href="https://github.com/irmen/prog8/tree/master/examples">Examples</a></li>
+            <li><a href="https://prog8.readthedocs.io/">Documentation</a></li>
+            <li><a href="https://www.lulu.com/shop/irmen-de-jong-and-andrew-gillham/prog8-handbook/paperback/product-q6ggp82.html" target=lulu>Order Printed Manual</a></li>
+          </ul>
         </div>
         <br>
         Our Mascot's name is <i>8 Ball</i>, he is a Pug!
@@ -86,7 +92,7 @@
         for your machine and compiler version.</p>
 
         <h2>Give it a try</h2>
-        <p>Start with an <a href="https://github.com/irmen/prog8/releases">official
+        <p>Start with an <a href="/releases.html">official
         release</a> and follow the setup instructions in the
         <a href="https://prog8.readthedocs.io/">documentation</a>. For the 6502
         targets, the compiler uses Java and the 64tass assembler. An emulator is
@@ -117,11 +123,11 @@
 <script>
   function toggleMenu(id) {
     var el = document.getElementById(id);
-    if (el.style.display === "none") {
-      el.style.display = "block";
-    } else {
-      el.style.display = "none";
-    }
+    var expanded = el.style.display === "none";
+    el.style.display = expanded ? "block" : "none";
+    var toggle = document.querySelector('[aria-controls="' + id + '"]');
+    toggle.setAttribute("aria-expanded", String(expanded));
+    toggle.querySelector("span").textContent = expanded ? "▲" : "▼";
   }
 </script>
 
