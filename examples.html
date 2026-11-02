@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>|| Examples - P8UG – Prog8 Users Group ||</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Meta description -->
+  <meta name="description" content="Start with Hello World, then explore official Prog8 examples for the Commodore 64 and Commander X16.">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="Prog8 Examples – Prog8 Users Group">
+  <meta property="og:description" content="Start with Hello World, then explore official Prog8 examples for the Commodore 64 and Commander X16.">
+  <meta property="og:image" content="https://p8ug.org/p8ug_banner.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://p8ug.org/examples.html">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Prog8 Examples – Prog8 Users Group">
+  <meta name="twitter:description" content="Start with Hello World, then explore official Prog8 examples for the Commodore 64 and Commander X16.">
+  <meta name="twitter:image" content="https://p8ug.org/p8ug_banner.png">
+
+</head>
+<body bgcolor="#f4e3c0"> <!-- complementary light beige background -->
+  <h1>Prog8 Examples – Prog8 Users Group</h1>
+  <table border="0" cellspacing="10">
+    <tr>
+      <!-- Left column: collapsible menu -->
+      <td valign="top" width="300">
+        <b>Menu</b><br><br>
+        <a href="/">Home</a><br><br>
+        <a href="javascript:void(0)" onclick="toggleMenu('about'); return false;" aria-expanded="true" aria-controls="about"><span aria-hidden="true" style="font-size:0.7em;">&#9660;</span> About</a>
+        <div id="about" style="display:block; margin-left:10px;">
+          <ul style="margin:0; padding-left:20px;">
+            <li><a href="/overview.html">Overview</a></li>
+            <li><a href="/history/">P8UG History</a></li>
+          </ul>
+        </div>
+        <br>
+
+        <a href="javascript:void(0)" onclick="toggleMenu('downloads'); return false;" aria-expanded="true" aria-controls="downloads"><span aria-hidden="true" style="font-size:0.7em;">&#9660;</span> Downloads</a>
+        <div id="downloads" style="display:block; margin-left:10px;">
+          <ul style="margin:0; padding-left:20px;">
+            <li><a href="/releases.html">Releases</a></li>
+            <li><a href="/show-and-tell.html">Show &amp; Tell</a></li>
+            <li><a href="/videos.html">Past Videos</a></li>
+          </ul>
+        </div>
+        <br>
+
+        <a href="javascript:void(0)" onclick="toggleMenu('docs'); return false;" aria-expanded="true" aria-controls="docs"><span aria-hidden="true" style="font-size:0.7em;">&#9660;</span> Docs</a>
+        <div id="docs" style="display:block; margin-left:10px;">
+          <ul style="margin:0; padding-left:20px;">
+            <li><a href="/examples.html">Examples</a></li>
+            <li><a href="https://prog8.readthedocs.io/">Documentation</a></li>
+            <li><a href="https://www.lulu.com/shop/irmen-de-jong-and-andrew-gillham/prog8-handbook/paperback/product-q6ggp82.html" target=lulu>Order Printed Manual</a></li>
+          </ul>
+        </div>
+        <br>
+        Our Mascot's name is <i>8 Ball</i>, he is a Pug!
+      </td>
+
+      <!-- Main body -->
+      <td valign="top" width="600">
+        <h2>Start small, then change something!</h2>
+        <p>A little working program is a great place to start learning Prog8.
+        Try Hello World, then pick an example that does something you want
+        your own machine to do.</p>
+        <p><a href="#hello">Hello World</a> - <a href="#c64">C64 examples</a>
+        - <a href="#x16">X16 examples</a> - <a href="#shared">Shared examples</a></p>
+
+        <h2 id="hello">Hello World</h2>
+        <p>Save this as <code>hello.p8</code>. The textio module gives us text
+        output, and <code>main.start()</code> is where the program begins.</p>
+        <pre style="background:#fff8e8; border:1px solid #c8b68f; padding:12px; overflow-x:auto;"><code>%import textio
+
+main {
+    sub start() {
+        txt.print(&quot;hello world!\n&quot;)
+    }
+}
+</code></pre>
+        <p>With the Prog8 compiler and 64tass installed, compile for your machine:</p>
+        <pre style="background:#fff8e8; border:1px solid #c8b68f; padding:12px; overflow-x:auto;"><code>prog8c -target c64 hello.p8
+prog8c -target cx16 hello.p8</code></pre>
+        <p>Run one command for the target you want. Each produces a program for
+        that machine; use separate output folders if you want to keep both.
+        See our <a href="/releases.html">releases</a> page and the
+        <a href="https://prog8.readthedocs.io/">documentation</a> for setup.</p>
+
+        <h2>Explore the official examples</h2>
+        <p>The links below take you to Irmen's source files. This is a selection
+        from the <a href="https://github.com/irmen/prog8/tree/master/examples">full examples directory</a>,
+        with a focus on the C64 and Commander X16. Browse the code, compile an
+        example, and try changing a color, a message, or a movement pattern.</p>
+        <p>These links follow the development branch. Some examples may need a
+        newer compiler or particular hardware features. Match the source to
+        your compiler version and read the comments before trying it out.</p>
+
+        <h2 id="c64">Commodore 64</h2>
+        <p><a href="https://github.com/irmen/prog8/tree/master/examples/c64">Browse all C64 examples</a></p>
+        <ul>
+          <li><p><a href="https://github.com/irmen/prog8/blob/master/examples/c64/sprites.p8">Balloon sprites</a> - Sets up the eight hardware sprites and uses a raster interrupt. A good place to see sprite data, positioning, and VIC-II registers together.</p></li>
+          <li><p><a href="https://github.com/irmen/prog8/blob/master/examples/c64/wizzine.p8">Wizzine</a> - Animates balloon sprites from an interrupt handler. Try changing the movement and see what happens!</p></li>
+          <li><p><a href="https://github.com/irmen/prog8/blob/master/examples/c64/rasterbars.p8">Raster bars</a> - Moving color bars driven by raster interrupts. A small example for exploring screen timing and color changes.</p></li>
+          <li><p><a href="https://github.com/irmen/prog8/blob/master/examples/c64/banking.p8">Bank switching</a> - Explores ROM and the RAM underneath it, including changing the BASIC ready prompt. Read the comments about interrupts and ROM access carefully.</p></li>
+          <li><p><a href="https://github.com/irmen/prog8/blob/master/examples/c64/tehtriz.p8">TehTriz</a> - A complete Tetris-style game with a holding area, next-piece display, wall kicks, increasing speed, and sound effects. A larger example to explore once the small ones make sense.</p></li>
+        </ul>
+        <h2 id="x16">Commander X16</h2>
+        <p><a href="https://github.com/irmen/prog8/tree/master/examples/cx16">Browse all X16 examples</a></p>
+        <ul>
+          <li><p><a href="https://github.com/irmen/prog8/blob/master/examples/cx16/cobramk3-verafx.p8">Cobra Mk III with VERA FX</a> - Draws the spaceship using VERA FX line drawing at 320 by 240 in 256 colors. One to try when you want to explore the X16 graphics hardware.</p></li>
+          <li><p><a href="https://github.com/irmen/prog8/blob/master/examples/cx16/keyboardhandler.p8">Custom keyboard handler</a> - Installs a key handler and responds to key presses, with Escape to quit. Useful reading for a game or an interactive tool.</p></li>
+          <li><p><a href="https://github.com/irmen/prog8/blob/master/examples/cx16/life.p8">Conway's Game of Life</a> - Uses cell grids and neighbor counts to run the classic cellular automaton. A fun way to explore arrays, pointers, and updating a world one generation at a time.</p></li>
+          <li><p><a href="https://github.com/irmen/prog8/blob/master/examples/cx16/tehtriz.p8">TehTriz for X16</a> - The X16 version of the falling-block game, with sound through the VERA PSG. Compare it with the C64 version to see how the same idea fits each machine.</p></li>
+          <li><p><a href="https://github.com/irmen/prog8/blob/master/examples/cx16/diskspeed.p8">Disk speed benchmark</a> - Measures disk transfers with optional verification. This example writes data to disk, so use a disposable test disk or emulator image.</p></li>
+        </ul>
+        <h2 id="shared">Examples for more than one machine</h2>
+        <p>Not every example needs to be tied to one computer. These examples
+        are marked in their source as supporting multiple targets.</p>
+        <ul>
+          <li><p><a href="https://github.com/irmen/prog8/blob/master/examples/numbergame.p8">Number guessing game</a> - Combines text input, a random secret number, and a limited number of guesses. A nice next step after Hello World.</p></li>
+          <li><p><a href="https://github.com/irmen/prog8/blob/master/examples/primes.p8">Prime numbers</a> - Uses a sieve to find primes up to 255. Follow the arrays, loops, and subroutines to see how the algorithm comes together.</p></li>
+        </ul>
+        <p>Made something of your own? Visit <a href="/show-and-tell.html">Show &amp; Tell</a>
+        and share it with the crew on <a href="https://discord.gg/nS2PqEC">Discord</a>!</p>
+      </td>
+      <!-- Right column: image -->
+      <td valign="top" width="300" align="center">
+        <img src="p8ug_banner.png" alt="Prog8 Users Group Banner" style="max-height:400px;"><br><br>
+        As seen in<br/><a href=https://www.computesgazette.com/ target=_other>COMPUTE!'S GAZETTE</a>!
+      </td>
+    </tr>
+  </table>
+  <div align=left>Brought to you by <a href=https://retrodores.com>Retrodores.com</a></div>
+<script>
+  function toggleMenu(id) {
+    var el = document.getElementById(id);
+    var expanded = el.style.display === "none";
+    el.style.display = expanded ? "block" : "none";
+    var toggle = document.querySelector('[aria-controls="' + id + '"]');
+    toggle.setAttribute("aria-expanded", String(expanded));
+    toggle.querySelector("span").textContent = expanded ? "▼" : "▶";
+  }
+</script>
+
+</body>
+</html>
